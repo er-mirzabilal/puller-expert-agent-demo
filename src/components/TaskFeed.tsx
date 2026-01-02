@@ -125,9 +125,7 @@ function TaskItem({ task, index, isSelected, onSelect }: TaskItemProps) {
         'w-full text-left p-3 rounded-lg border-l-2 transition-all duration-200',
         'bg-card hover:bg-accent',
         priorityColors[task.priority],
-        isSelected && 'ring-1 ring-primary glow-primary',
-        // Static warning treatment for review tasks instead of animation
-        isReview && !isSelected && 'ring-1 ring-warning/50 bg-warning/5'
+        isSelected && 'ring-1 ring-primary glow-primary'
       )}
     >
       {/* Source & Flags Row */}
