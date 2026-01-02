@@ -123,15 +123,25 @@ export default function Index() {
         {/* Main Content Area */}
         <main className="flex-1 flex flex-col overflow-hidden">
           {selectedTask ? (
-            <>
-              {/* Workspace - Context Thread Only */}
+            <div className="flex-1 flex overflow-hidden">
+              {/* Context Thread */}
               <div className="flex-1 overflow-hidden">
                 <ContextThread
                   messages={chatMessages}
                   taskTitle={selectedTask.description}
                 />
               </div>
-            </>
+              
+              {/* Artifact Editor */}
+              <div className="w-[480px] border-l border-border flex-shrink-0">
+                <ArtifactEditor
+                  code={originalCode}
+                  onApprove={handleApprove}
+                  onOverride={handleOverride}
+                  isApproving={isApproving}
+                />
+              </div>
+            </div>
           ) : (
             <div className="flex-1 flex items-center justify-center">
               <div className="text-center">
